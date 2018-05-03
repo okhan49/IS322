@@ -11,6 +11,7 @@ it('App renders without crashing', () => {
         <App
             state={initialState}
             submitAnimal={mockFunction}
+            guessedAnimals={[]}
         />,
     );
     expect(component.exists()).toEqual(true);

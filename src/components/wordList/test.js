@@ -1,0 +1,22 @@
+/* global describe, it, expect */
+
+import React from 'react';
+import { shallow } from 'enzyme';
+import WordList from '.';
+
+describe('WordList component', () => {
+    const guessedAnimals = [
+        {
+            id: 1,
+            text: 'Zebra',
+        },
+    ];
+    const component = shallow(<WordList guessedAnimals={guessedAnimals}/>);
+    it('Should render successfully', () => {
+        expect(component.exists()).toEqual(true);
+    });
+    it('Should display a word when passed in as a prop', () => {
+        expect(component.find('.word-text').text()).toEqual(guessedAnimals[0].text);
+    });
+
+});
