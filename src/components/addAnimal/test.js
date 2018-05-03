@@ -1,25 +1,30 @@
-/* global expect, it, describe, jest*/
+/* global expect, it, describe, jest, beforeEach*/
 
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import AddAnimal from '.';
 
 describe('AddAnimal component', () => {
+    let component;
+    const submitMock = jest.fn();
+
+    beforeEach(() => {
+        component = shallow(
+            <AddAnimal submitAnimal={submitMock}/>,
+        );
+    });
+
     it('Should render successfully', () => {
-        const component = shallow(<AddAnimal />);
         expect(component.exists()).toEqual(true);
     });
     it('Should have one input', () => {
-        const component = shallow(<AddAnimal />);
         expect(component.find('.word-input').length).toEqual(1);
     });
     describe('Add Animal button', () => {
         it('Should exist', () => {
-            const component = shallow(<AddAnimal />);
             expect(component.find('.word-submit').length).toEqual(1);
         });
         it('Should call the submitAnimal function when clicked', () => {
-            const submitMock = jest.fn();
             const component = mount(<AddAnimal submitAnimal={submitMock} />);
 
             expect(submitMock.mock.calls.length).toEqual(0);
