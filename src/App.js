@@ -5,10 +5,12 @@ import AddAnimal from './components/addAnimal/';
 import WordList from './components/wordList';
 import actions from './actions/';
 import GameOver from "./components/gameOver";
+import HomeScreen from "./components/homeScreen";
 
 export const App = ({ submitAnimal, guessedAnimals, winner }) => (
     <div>
         <h1>Last Letter Game - Animal Edition</h1>
+        <HomeScreen/>
         <AddAnimal submitAnimal={submitAnimal} />
         <WordList guessedAnimals={guessedAnimals}/>
         <GameOver winner={winner}/>
