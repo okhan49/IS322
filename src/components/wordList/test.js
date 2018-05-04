@@ -15,8 +15,5 @@ describe('WordList component', () => {
     it('Should render successfully', () => {
         expect(component.exists()).toEqual(true);
     });
-    it('Should display a word when passed in as a prop', () => {
-        expect(component.find('.word-text').text()).toEqual(guessedAnimals[0].text);
-    });
 
 });

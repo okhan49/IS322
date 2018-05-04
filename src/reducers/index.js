@@ -20,7 +20,7 @@ export const reducer = (state = initialState, action) => {
                     let compLastLetter = state.guessedAnimals[state.guessedAnimals.length - 1].text.toLowerCase().substr(state.guessedAnimals[state.guessedAnimals.length - 1].text.length -1);
                     if(compLastLetter != currLet){
                         console.log("You Must Enter a word that begins with '" + compLastLetter.toUpperCase() + "'");
-                        win = "Computer";
+                        win =  "Oops, you needed to enter a word that began with '" + compLastLetter.toUpperCase() + "'";
                         currscreen = "gameover";
                     }
                 }
@@ -35,7 +35,7 @@ export const reducer = (state = initialState, action) => {
                     }
                     else {
                         console.log("You Win");
-                        win = "Player";
+                        win = "You Win!";
                         currscreen = "gameover";
                     }
                     return {
@@ -57,8 +57,8 @@ export const reducer = (state = initialState, action) => {
                     };
                 }
                 else {
-                    console.log("That's not a valid animal");
-                    win = "Computer";
+                    console.log("Oops, that wasn't a valid animal.");
+                    win = "Oops, that wasn't a valid animal.";
                     currscreen = "gameover";
                 }
             }
@@ -71,13 +71,13 @@ export const reducer = (state = initialState, action) => {
                     }
                 }
                 if (alreadyGuessed){
-                    console.log("You already guessed that animal");
-                    win = "Computer";
+                    console.log("Oops, that animal was already guessed.");
+                    win = "Oops, that animal was already guessed.";
                     currscreen = "gameover";
                 }
                 else {
-                    console.log("That's not a valid animal");
-                    win = "Computer";
+                    console.log("Oops, that wasn't a valid animal.");
+                    win = "Oops, that wasn't a valid animal.";
                     currscreen = "gameover";
                 }
             }
@@ -96,8 +96,10 @@ export const reducer = (state = initialState, action) => {
             };
         case types.PLAY_GAME:
             return {
-                ...state,
                 screen: "playgame",
+                guessedAnimals:[],
+                animalsBank: Animals,
+                winner: "none",
             };
         default:
             return state;

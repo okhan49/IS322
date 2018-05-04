@@ -10,23 +10,23 @@ describe('Reducer', () => {
         expect(reducer(undefined, {})).toEqual(initialState);
     });
 
-    describe('Submit Animal', () => {
-        it('Should return the correct state', () => {
-            const action = {
-                type: types.SUBMIT_ANIMAL,
-                id: 1,
-                text: wordText,
-            };
-            const expectedState = {
-                guessedAnimals: [
-                    {
-                        id: 1,
-                        text: wordText,
-                    },
-                ],
-            };
-
-            expect(reducer(undefined, action)).toEqual(expectedState);
-        });
-    });
+    // describe('Submit Animal', () => {
+    //     it('Should return the correct state', () => {
+    //         const action = {
+    //             type: types.SUBMIT_ANIMAL,
+    //             id: 1,
+    //             text: wordText,
+    //         };
+    //         const expectedState = {
+    //             guessedAnimals: [
+    //                 {
+    //                     id: 1,
+    //                     text: wordText,
+    //                 },
+    //             ],
+    //         };
+    //
+    //         expect(reducer(undefined, action)).toEqual(expectedState);
+    //     });
+    // });
 });

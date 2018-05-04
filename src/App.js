@@ -15,7 +15,7 @@ export const App = ({ screen, playGame, submitAnimal, guessedAnimals, winner }) 
         return [<AddAnimal submitAnimal={submitAnimal} key='1'/>, <WordList key='2' guessedAnimals={guessedAnimals}/>];
     }
     else if(screen == "gameover"){
-        return <GameOver winner={winner}/>;
+        return <GameOver winner={winner} playGame={playGame}/>;
     }
 };
 

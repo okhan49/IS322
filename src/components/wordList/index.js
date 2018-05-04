@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const WordList = ({ guessedAnimals }) => {
-    const wordItems  = guessedAnimals.map(word => (
-        <li key={word.id}>
-            <span className="word-text">{word.text}</span>
-        </li>
-    ));
-    return (
-        <ul>
-            {wordItems}
-        </ul>
-    );
+    if(guessedAnimals.length != 0) {
+        const compWord = guessedAnimals[guessedAnimals.length - 1].text;
+        return (
+            <span className="word-text">{compWord}</span>
+        );
+    }
+    else {
+        return <span></span>;
+    }
 };
 
 WordList.propTypes = {
