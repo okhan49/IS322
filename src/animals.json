@@ -4,11 +4,13 @@
     "albatross",
     "alligator",
     "alpaca",
+    "angelfish",
     "ant",
     "anteater",
     "antelope",
     "ape",
-    "armadillo"
+    "armadillo",
+    "axolotl"
   ],
   "b": [
     "baboon",
@@ -20,10 +22,12 @@
     "bee",
     "bison",
     "boar",
+    "bobcat",
     "buffalo",
     "butterfly"
   ],
   "c": [
+    "caiman",
     "camel",
     "capybara",
     "caribou",
@@ -31,17 +35,20 @@
     "cat",
     "caterpillar",
     "cattle",
+    "chameleon",
     "chamois",
     "cheetah",
     "chicken",
     "chimpanzee",
     "chinchilla",
+    "chipmunk",
     "chough",
     "clam",
     "cobra",
     "cockroach",
     "cod",
     "cormorant",
+    "cougar",
     "cow",
     "coyote",
     "crab",
@@ -52,7 +59,7 @@
   ],
   "d": [
     "deer",
-    "dinosaur",
+    "dingo",
     "dog",
     "dogfish",
     "dolphin",
@@ -70,7 +77,7 @@
     "eel",
     "eland",
     "elephant",
-    "elephant-seal",
+    "elephant seal",
     "elk",
     "emu"
   ],
@@ -81,14 +88,17 @@
     "fish",
     "flamingo",
     "fly",
+    "flying squirrel",
     "fox",
     "frog"
   ],
   "g": [
-    "gaur",
+    "gar",
     "gazelle",
+    "gecko",
     "gerbil",
-    "giant-panda",
+    "giant panda",
+    "gibbon",
     "giraffe",
     "gnat",
     "gnu",
@@ -97,11 +107,12 @@
     "goldfinch",
     "goldfish",
     "gorilla",
+    "grasshopper",
     "goshawk",
     "grasshopper",
     "grouse",
     "guanaco",
-    "guinea-fowl",
+    "guinea fowl",
     "guinea-pig",
     "gull"
   ],
@@ -122,7 +133,8 @@
   "i": [
     "ibex",
     "ibis",
-    "iguana"
+    "iguana",
+    "impala"
   ],
   "j": [
     "jackal",
@@ -133,8 +145,9 @@
   "k": [
     "kangaroo",
     "kingfisher",
+    "kiwi",
     "koala",
-    "komodo-dragon",
+    "komodo dragon",
     "kookabura",
     "kouprey",
     "kudu"
@@ -145,6 +158,7 @@
     "lemur",
     "leopard",
     "lion",
+    "lizard",
     "llama",
     "lobster",
     "locust",
@@ -154,10 +168,12 @@
     "lyrebird"
   ],
   "m": [
+    "macaw",
     "magpie",
     "mallard",
     "manatee",
     "mandrill",
+    "manta ray",
     "mantis",
     "marten",
     "meerkat",
@@ -166,6 +182,7 @@
     "mongoose",
     "monkey",
     "moose",
+    "moth",
     "mouse",
     "mosquito",
     "mule"
@@ -176,6 +193,7 @@
     "nightingale"
   ],
   "o": [
+    "ocelot",
     "octopus",
     "okapi",
     "opossum",
@@ -190,17 +208,22 @@
     "panther",
     "parrot",
     "partridge",
+    "peacock",
     "peafowl",
     "pelican",
     "penguin",
     "pheasant",
     "pig",
     "pigeon",
-    "polar-bear",
+    "piranha",
+    "platypus",
+    "polar bear",
     "pony",
     "porcupine",
     "porpoise",
-    "prairie-dog"
+    "prairie-dog",
+    "puffin",
+    "puma"
   ],
   "q": [
     "quail",
@@ -210,14 +233,14 @@
   "r": [
     "rabbit",
     "raccoon",
-    "rail",
     "ram",
     "rat",
     "raven",
-    "red-deer",
-    "red-panda",
+    "red deer",
+    "red panda",
     "reindeer",
     "rhinoceros",
+    "robin",
     "rook"
   ],
   "s": [
@@ -227,14 +250,17 @@
     "sandpiper",
     "sardine",
     "scorpion",
-    "sea-lion",
-    "sea-urchin",
+    "sea lion",
+    "sea urchin",
     "seahorse",
+    "seaturtle",
     "seal",
     "shark",
     "sheep",
     "shrew",
+    "shrimp",
     "skunk",
+    "sloth",
     "snail",
     "snake",
     "sparrow",
@@ -242,9 +268,11 @@
     "spoonbill",
     "squid",
     "squirrel",
+    "starfish",
     "starling",
     "stingray",
     "stinkbug",
+    "stoat",
     "stork",
     "swallow",
     "swan"
@@ -255,11 +283,14 @@
     "termite",
     "tiger",
     "toad",
+    "tortoise",
+    "toucan",
     "trout",
     "turkey",
     "turtle"
   ],
   "u": [
+    "Umbrellabird"
   ],
   "v": [
     "viper",
@@ -268,10 +299,12 @@
   "w": [
     "wallaby",
     "walrus",
+    "warthog",
     "wasp",
     "water-buffalo",
     "weasel",
     "whale",
+    "wildebeest",
     "wolf",
     "wolverine",
     "wombat",
