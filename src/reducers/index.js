@@ -2,6 +2,7 @@ import types from '../constants';
 import Animals from '../animals';
 
 export const initialState = {
+    screen: "home",
     guessedAnimals:[],
     animalsBank: Animals,
     winner: "none",
@@ -11,6 +12,7 @@ export const reducer = (state = initialState, action) => {
     var win = state.winner;
     switch (action.type){
         case types.SUBMIT_ANIMAL:
+            var currscreen = "playgame";
             if(state.animalsBank[action.text.toLowerCase()[0]].length != 0){
                 var animalsCopy = Object.assign(state.animalsBank);
                 let currLet = action.text.toLowerCase()[0];
@@ -19,6 +21,7 @@ export const reducer = (state = initialState, action) => {
                     if(compLastLetter != currLet){
                         console.log("You Must Enter a word that begins with '" + compLastLetter.toUpperCase() + "'");
                         win = "Computer";
+                        currscreen = "gameover";
                     }
                 }
                 let index = animalsCopy[currLet].indexOf(action.text.toLowerCase());
@@ -33,9 +36,11 @@ export const reducer = (state = initialState, action) => {
                     else {
                         console.log("You Win");
                         win = "Player";
+                        currscreen = "gameover";
                     }
                     return {
                         ...state,
+                        screen: currscreen,
                         guessedAnimals:[
                             ...state.guessedAnimals,
                             {
@@ -54,6 +59,7 @@ export const reducer = (state = initialState, action) => {
                 else {
                     console.log("That's not a valid animal");
                     win = "Computer";
+                    currscreen = "gameover";
                 }
             }
             else {
@@ -67,14 +73,17 @@ export const reducer = (state = initialState, action) => {
                 if (alreadyGuessed){
                     console.log("You already guessed that animal");
                     win = "Computer";
+                    currscreen = "gameover";
                 }
                 else {
                     console.log("That's not a valid animal");
                     win = "Computer";
+                    currscreen = "gameover";
                 }
             }
             return {
                 ...state,
+                screen: currscreen,
                 guessedAnimals:[
                     ...state.guessedAnimals,
                     {
@@ -84,6 +93,11 @@ export const reducer = (state = initialState, action) => {
                 ],
                 animalsBank: state.animalsBank,
                 winner: win,
+            };
+        case types.PLAY_GAME:
+            return {
+                ...state,
+                screen: "playgame",
             };
         default:
             return state;

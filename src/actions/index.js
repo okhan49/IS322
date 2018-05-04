@@ -14,6 +14,11 @@ const actions = {
             text,
         };
     },
+    playGame(){
+        return {
+            type: types.PLAY_GAME,
+        }
+    },
 };
 
 export default actions;
