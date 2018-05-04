@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import AddAnimal from './components/addAnimal/';
 import WordList from './components/wordList';
 import actions from './actions/';
+import GameOver from "./components/gameOver";
 
-export const App = ({ submitAnimal, guessedAnimals }) => (
+export const App = ({ submitAnimal, guessedAnimals, winner }) => (
     <div>
         <h1>Last Letter Game - Animal Edition</h1>
         <AddAnimal submitAnimal={submitAnimal} />
         <WordList guessedAnimals={guessedAnimals}/>
+        <GameOver winner={winner}/>
     </div>
 );
 App.propTypes = {
@@ -19,6 +21,7 @@ App.propTypes = {
         text: PropTypes.string.isRequired,
     },
     )).isRequired,
+    winner: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => state.lastLetterGameApp;
