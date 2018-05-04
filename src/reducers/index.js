@@ -6,6 +6,8 @@ export const initialState = {
     guessedAnimals:[],
     animalsBank: Animals,
     winner: "none",
+    score: 0,
+    highscore: 0,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -37,6 +39,33 @@ export const reducer = (state = initialState, action) => {
                         console.log("You Win");
                         win = "You Win!";
                         currscreen = "gameover";
+                        if(state.score + 1 > state.highscore){
+                            var hs = state.score + 1;
+                        }
+                        else {
+                            hs = state.highscore;
+                        }
+                        return {
+                            ...state,
+                            screen: currscreen,
+                            guessedAnimals:[
+                                ...state.guessedAnimals,
+                                {
+                                    id: action.id,
+                                    text: action.text,
+                                },
+                            ],
+                            animalsBank: animalsCopy,
+                            winner: win,
+                            score: state.score + 1,
+                            highscore: hs,
+                        };
+                    }
+                    if(state.score + 1 > state.highscore){
+                        var hs = state.score + 1;
+                    }
+                    else {
+                        hs = state.highscore;
                     }
                     return {
                         ...state,
@@ -54,12 +83,28 @@ export const reducer = (state = initialState, action) => {
                         ],
                         animalsBank: animalsCopy,
                         winner: win,
+                        score: state.score + 1,
+                        highscore: hs,
                     };
                 }
                 else {
-                    console.log("Oops, that wasn't a valid animal.");
-                    win = "Oops, that wasn't a valid animal.";
-                    currscreen = "gameover";
+                    var alreadyGuessed = false;
+                    for (var i = 0; i < state.guessedAnimals.length; i++){
+                        if (state.guessedAnimals[i].text.toLowerCase() == action.text.toLowerCase()){
+                            alreadyGuessed = true;
+                            break;
+                        }
+                    }
+                    if (alreadyGuessed){
+                        console.log("Oops, that animal was already guessed.");
+                        win = "Oops, that animal was already guessed.";
+                        currscreen = "gameover";
+                    }
+                    else {
+                        console.log("Oops, that wasn't a valid animal.");
+                        win = "Oops, that wasn't a valid animal.";
+                        currscreen = "gameover";
+                    }
                 }
             }
             else {
@@ -81,6 +126,12 @@ export const reducer = (state = initialState, action) => {
                     currscreen = "gameover";
                 }
             }
+            if(state.score > state.highscore){
+                var hs = state.score;
+            }
+            else {
+                hs = state.highscore;
+            }
             return {
                 ...state,
                 screen: currscreen,
@@ -93,6 +144,8 @@ export const reducer = (state = initialState, action) => {
                 ],
                 animalsBank: state.animalsBank,
                 winner: win,
+                score: state.score,
+                highscore: state.highscore,
             };
         case types.PLAY_GAME:
             return {
@@ -100,6 +153,26 @@ export const reducer = (state = initialState, action) => {
                 guessedAnimals:[],
                 animalsBank: Animals,
                 winner: "none",
+                score: 0,
+                highscore: state.highscore
+            };
+        case types.GO_HOME:
+            return {
+                screen: "home",
+                guessedAnimals:[],
+                animalsBank: Animals,
+                winner: "none",
+                score: 0,
+                highscore: state.highscore
+            };
+        case types.QUIT:
+            return {
+                screen: "gameover",
+                guessedAnimals: state.guessedAnimals,
+                animalsBank: state.animalsBank,
+                winner: "Looks like you gave up.",
+                score: state.score,
+                highscore: state.highscore
             };
         default:
             return state;

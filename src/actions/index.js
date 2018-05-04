@@ -19,6 +19,16 @@ const actions = {
             type: types.PLAY_GAME,
         }
     },
+    goHome(){
+        return {
+            type: types.GO_HOME,
+        }
+    },
+    quit(){
+        return {
+            type: types.QUIT,
+        }
+    },
 };
 
 export default actions;

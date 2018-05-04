@@ -7,15 +7,15 @@ import actions from './actions/';
 import GameOver from "./components/gameOver";
 import HomeScreen from "./components/homeScreen";
 
-export const App = ({ screen, playGame, submitAnimal, guessedAnimals, winner }) => {
+export const App = ({ screen, playGame, submitAnimal, guessedAnimals, winner, score, highscore, goHome, quit }) => {
     if(screen == "home"){
-        return <HomeScreen playGame={playGame}/>;
+        return <HomeScreen playGame={playGame} highscore={highscore}/>;
     }
     else if(screen == "playgame"){
-        return [<AddAnimal submitAnimal={submitAnimal} key='1'/>, <WordList key='2' guessedAnimals={guessedAnimals}/>];
+        return [<WordList key='2' score={score} quit={quit} goHome={goHome} guessedAnimals={guessedAnimals}/>, <AddAnimal submitAnimal={submitAnimal} key='1'/>];
     }
     else if(screen == "gameover"){
-        return <GameOver winner={winner} playGame={playGame}/>;
+        return <GameOver winner={winner} score={score} playGame={playGame} goHome={goHome} highscore={highscore}/>;
     }
 };
 
@@ -26,7 +26,13 @@ App.propTypes = {
         text: PropTypes.string.isRequired,
     },
     )).isRequired,
-    winner: PropTypes.string.isRequired
+    winner: PropTypes.string.isRequired,
+    highscore: PropTypes.number.isRequired,
+    score: PropTypes.number.isRequired,
+    screen: PropTypes.string.isRequired,
+    playGame: PropTypes.func.isRequired,
+    goHome: PropTypes.func.isRequired,
+    quit: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state.lastLetterGameApp;
@@ -39,6 +45,12 @@ const mapDispatchToProps = dispatch => ({
     },
     playGame:() => {
         dispatch(actions.playGame());
+    },
+    goHome: () => {
+        dispatch(actions.goHome());
+    },
+    quit: () => {
+        dispatch(actions.quit());
     }
 
 });

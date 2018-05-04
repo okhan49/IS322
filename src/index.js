@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
+import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(
     <Provider store={store}>

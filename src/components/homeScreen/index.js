@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HomeScreen = ({playGame}) => {
+const HomeScreen = ({playGame, highscore}) => {
     return (
-        <form onSubmit={(event) => {
-            event.preventDefault();
-            playGame();
-        }}>
-            <button className="playGame">Play Game</button>
-        </form>
+        <div>
+            <span>High Score: {highscore}</span>
+            <form onSubmit={(event) => {
+                event.preventDefault();
+                playGame();
+            }}>
+                <button className="playGame">Play Game</button>
+            </form>
+        </div>
     );
 };
 
 HomeScreen.propTypes = {
     playGame: PropTypes.func.isRequired,
+    highscore: PropTypes.number.isRequired,
 };
 export default HomeScreen;
