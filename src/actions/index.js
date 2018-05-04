@@ -2,7 +2,7 @@ import types from '../constants/';
 let wordID = 0;
 
 const nextID = () => {
-    wordID +=1;
+    wordID +=2;
     return wordID;
 };
 
