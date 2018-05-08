@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const HomeScreen = ({playGame, highscore}) => {
     return (
-        <div>
+        <div id="container">
             <span>High Score: {highscore}</span>
             <form onSubmit={(event) => {
                 event.preventDefault();

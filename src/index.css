@@ -1,6 +1,13 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 50px;
   background-color: #5b98ff;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 3px solid #931420;
+  text-align: center;
+  justify-content: center;
+
+}
+#container{
+
 }
