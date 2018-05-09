@@ -25,6 +25,7 @@ button {
 }
 button:hover {
     background-color: white;
+    cursor: pointer;
 }
 .playGame{
     padding: 15px 32px;
