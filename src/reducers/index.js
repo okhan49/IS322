@@ -1,10 +1,10 @@
 import types from '../constants';
 import Animals from '../animals';
-
+const permAnimals = Animals;
 export const initialState = {
     screen: "home",
     guessedAnimals:[],
-    animalsBank: Animals,
+    animalsBank: Object.assign(Animals),
     winner: "none",
     score: 0,
     highscore: 0,
@@ -151,7 +151,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 screen: "playgame",
                 guessedAnimals:[],
-                animalsBank: Animals,
+                animalsBank: Object.assign(Animals),
                 winner: "none",
                 score: 0,
                 highscore: state.highscore
@@ -160,7 +160,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 screen: "home",
                 guessedAnimals:[],
-                animalsBank: Animals,
+                animalsBank: Object.assign(Animals),
                 winner: "none",
                 score: 0,
                 highscore: state.highscore
